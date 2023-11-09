@@ -2,7 +2,7 @@ const container = document.getElementById('container')
 const board = document.getElementById('htmlGameBoard');
 const section = document.querySelectorAll('.section');
 let marker = ''
-
+let counter = 2
 
 
 section.forEach((div) => {
@@ -14,18 +14,13 @@ section.forEach((div) => {
     
     gameCount.addOX()
     gameBoard.changeBoard(index)
-
+    displayController.render()
 });
 
 
 
 
-/*function addToBoard(index) {
-    _board.splice(index, 1, `${marker}`)
-}
-*/
 
-});
 
 
 
@@ -34,12 +29,13 @@ section.forEach((div) => {
 
 
     const _board = ["", "", "", "", "", "", "", "", ""]
-  
+    const getBoard = _board 
     function changeBoard(index) { 
         _board.splice(index, 1, `${marker}`)
         console.log(_board)
     }
-        return {changeBoard}
+
+        return {changeBoard, getBoard}
      
 
 })();
@@ -50,7 +46,7 @@ section.forEach((div) => {
 
 
 const displayController = (function () {
- // DOM METHOD BASED ON INDEXED DIVS
+    if (gameBoard.getBoard[index])
 
 
 })();
@@ -58,7 +54,8 @@ const displayController = (function () {
 const gameCount = (function () {
 
     const addOX = () => {
-        let counter = 2
+
+
         if (counter % 2 == 0) {
             marker = 'X'
         } else if (counter % 2 == 1) {
@@ -66,7 +63,7 @@ const gameCount = (function () {
             
         }
         counter++
-        
+        console.log(counter)
     };
 
     return { addOX };
